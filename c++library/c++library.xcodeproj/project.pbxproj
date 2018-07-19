@@ -25,7 +25,6 @@
 /* Begin PBXFileReference section */
 		28A829CE20E150A8002B28E4 /* c++library */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "c++library"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A829D820E150C2002B28E4 /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stack.h; path = ../stack.h; sourceTree = "<group>"; };
-		28A829D920E150C2002B28E4 /* deque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = deque.h; path = ../deque.h; sourceTree = "<group>"; };
 		28A829DA20E150C2002B28E4 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vector.h; path = ../vector.h; sourceTree = "<group>"; };
 		28A829DB20E150C2002B28E4 /* priority_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = priority_queue.h; path = ../priority_queue.h; sourceTree = "<group>"; };
 		28A829DC20E150C2002B28E4 /* queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = queue.h; path = ../queue.h; sourceTree = "<group>"; };
@@ -51,7 +50,6 @@
 			isa = PBXGroup;
 			children = (
 				28A829DD20E150C3002B28E4 /* algorithm.h */,
-				28A829D920E150C2002B28E4 /* deque.h */,
 				28A829DE20E150C3002B28E4 /* list.h */,
 				28A829E120E150C3002B28E4 /* map.h */,
 				28A829DB20E150C2002B28E4 /* priority_queue.h */,
