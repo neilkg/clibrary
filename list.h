@@ -9,8 +9,13 @@ public:
     list() : begin(nullptr), size(0) {}
     
     ~list() {
+        clear();
+    }
+    
+    void clear() {
         while (!empty()) {
             pop_front();
+            --size();
         }
     }
     
@@ -19,12 +24,14 @@ public:
         temp->val = val;
         temp->next = first;
         first = temp;
+        ++size;
     }
 
     void pop_front() {
         Node *temp = first;
         first = first->next;
         delete temp;
+        --size;
     }
     
     // returns true if val is deleted in list
@@ -39,6 +46,7 @@ public:
                 Node *to_delete = temp->next;
                 temp->next = to_delete->next;
                 delete to_delete;
+                --size;
                 return true;
             }
             temp = temp->next;
