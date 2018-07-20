@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2812B6082102315400D2B943 /* unit_test_framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = unit_test_framework.cpp; path = ../unit_test_framework.cpp; sourceTree = "<group>"; };
 		2812B6092102315500D2B943 /* unit_test_framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unit_test_framework.h; path = ../unit_test_framework.h; sourceTree = "<group>"; };
+		2812B60B210241A900D2B943 /* AVL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVL.h; path = ../AVL.h; sourceTree = "<group>"; };
 		28A829CE20E150A8002B28E4 /* c++library */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "c++library"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A829D820E150C2002B28E4 /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stack.h; path = ../stack.h; sourceTree = "<group>"; };
 		28A829DA20E150C2002B28E4 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vector.h; path = ../vector.h; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		28A829C520E150A8002B28E4 = {
 			isa = PBXGroup;
 			children = (
+				2812B60B210241A900D2B943 /* AVL.h */,
 				28A829DD20E150C3002B28E4 /* algorithm.h */,
 				28A829DE20E150C3002B28E4 /* list.h */,
 				28A829E120E150C3002B28E4 /* map.h */,

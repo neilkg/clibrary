@@ -1,7 +1,11 @@
+#include "unit_test_framework.h"
 #include "vector.h"
 #include "stack.h"
 #include "list.h"
-#include "unit_test_framework.h"
+#include "unordered_map.h"
+#include "map.h"
+
+// NEIL GOLLAPDUI
 
 
 TEST(vector_default) {
@@ -79,6 +83,28 @@ TEST(vector_range_based) {
     ASSERT_TRUE(three.size() == 14);
     ASSERT_TRUE(three[0] == 0);
     ASSERT_TRUE(three[13] == 13);
+}
+
+TEST(vector_copy_assignment) {
+    vector<int> one;
+    one.push_back(2);
+    one.push_back(3);
+    one.push_back(5);
+    vector<int> two(one);
+    ASSERT_TRUE(two.size() == 3);
+    ASSERT_TRUE(two[0] == 2);
+    ASSERT_TRUE(two[1] == 3);
+    ASSERT_TRUE(two[2] == 5);
+    
+    two.pop_back();
+    two = one;
+    ASSERT_TRUE(two[0] == 2);
+    ASSERT_TRUE(two[1] == 3);
+    ASSERT_TRUE(two[2] == 5);
+    two = two;
+    ASSERT_TRUE(two[0] == 2);
+    ASSERT_TRUE(two[1] == 3);
+    ASSERT_TRUE(two[2] == 5);
 }
 
 TEST(stack_default) {

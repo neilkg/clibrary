@@ -1,6 +1,7 @@
 #ifndef LIST_H
 #define LIST_H
 
+// NEIL GOLLAPUDI
 
 // singly linked linked list
 // O(n) search, custom removal

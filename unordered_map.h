@@ -3,9 +3,15 @@
 
 #include <functional>
 #include "vector.h"
+#include "AVL.h"
 
+// NEIL GOLLAPUDI
 
-// sorted vector collision resolution method;
+// HASHTABLE
+// O(1) amortized lookup, insertion, deletion
+// AVL tree collision resolution method;
+// for collision, O(log n) search, insertion, and deletion
+
 template <typename K, typename V, typename Hash = std::hash<K>>
 class unordered_map {
 public:
@@ -16,21 +22,23 @@ public:
     
     int size();
     
+    // if doesnt exist, makes an entry with that key
     V &operator[](K key);
     
-    // insert returns whether inserted successfully
-    // (if the key already exists in the table, do nothing and return false).
+    // insert returns if successfully inserted
+    // (if key exists in the table, do nothing and return false).
     bool insert(const K& key, const V& val);
     
-    // erase returns the number of items remove (0 or 1)
-    size_t erase(const K& key);
+    // erase returns true if successfully deleted
+    // (if key does not exist in table, do nothing and return false).
+    bool erase(const K& key);
     
     // returns index or -1 if key not found
     int find_index(const K& key);
     
     
 private:
-    vector<vector<T>> elts;
+    vector<AVL<V>> elts;
 
 };
 

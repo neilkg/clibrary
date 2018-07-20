@@ -1,18 +1,26 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include "AVL.h"
 
-// made using a binary search tree
+// NEIL GOLLAPUDI
+
+// made using a AVL tree
 // O(log n) search, insertion, and removal
-template <typename T>
+// Faster iteration than Unordered map
+template <typename V, typename K>
 class map {
 public:
     
     map();
     
-    bool empty();
+    bool empty() {
+        return elts.empty;
+    }
     
-    int size();
+    int size() {
+        return elts.size;
+    }
     
     V &operator[](K key);
     
@@ -23,10 +31,8 @@ public:
     // erase returns the number of items remove (0 or 1)
     size_t erase(const K& key);
     
-    // returns index or -1 if key not found
-    int find_index(const K& key);
-    
 private:
+    AVL<V> elts;
     
 };
 

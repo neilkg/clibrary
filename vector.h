@@ -1,6 +1,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+// NEIL GOLLAPDUI
 
 template <typename T>
 class vector {
@@ -41,10 +42,29 @@ public:
     }
     
     // copy constructor
-    vector(const vector<T> &other);
+    vector(const vector<T> &other) {
+        elts_size = other.elts_size;
+        elts_capacity = other.elts_capacity;
+        elts = new T[elts_capacity];
+        for (int i = 0; i < elts_size; ++i) {
+            elts[i] = other.elts[i];
+        }
+    }
     
     // assignment operator
-    vector & operator= (const vector<T> &rhs);
+    vector & operator= (const vector<T> &rhs) {
+        if (&rhs != this) {
+            elts_size = rhs.elts_size;
+            elts_capacity = rhs.elts_capacity;
+            delete elts;
+            T* temp = new T[elts_capacity];
+            elts = temp;
+            for (int i = 0; i < elts_size; ++i) {
+                elts[i] = rhs.elts[i];
+            }
+        }
+        return *this;
+    }
     
     bool empty() {
         return elts_size == 0;
