@@ -1,15 +1,18 @@
 # C++ Library
 
-Data Structures:
+**Data Structures:**
+'''
 Vector
 List (singly linked)
-Stack (array based)
+Stack
 Queue
 Priority Queue (array based)
 Unordered Map (hash table with collision resolve using AVL tree)
-Map (AVL tree based)
+Map (AVL tree)
+'''
 
-Algorithms:
+**Algorithms:**
+'''
 Sort (combination of Quicksort and Insertion Sort)
 Swap (move semantics)
-
+'''
