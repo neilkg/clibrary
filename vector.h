@@ -1,3 +1,6 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
 
 template <typename T>
 class vector {
@@ -21,12 +24,13 @@ public:
     
     //range based constructor
     template <class Iterator>
-    vector(Iterator begin, Iterator end) {
+    vector(Iterator begin, int size) {
         elts = new T[10];
         elts_capacity = 10;
         elts_size = 0;
-        while (begin != end) {
+        for (int i = 0; i < size; ++i) {
             push_back(*begin);
+            ++begin;
         }
     }
     
@@ -130,6 +134,10 @@ public:
         return elts[idx];
     }
     
+    T* begin() {
+        return elts;
+    }
+    
 private:
     T *elts;
     int elts_capacity;
@@ -147,3 +155,5 @@ private:
     }
     
 };
+
+#endif

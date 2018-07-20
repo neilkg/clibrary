@@ -1,3 +1,6 @@
+#ifndef ALGORITHM_H
+#define ALGORITHM_H
+
 #include <utility>
 
 template <typename T>
@@ -29,3 +32,5 @@ void insertion_sort(Iterator begin, Iterator end, Compare comp);
 
 template <class Iterator, class Compare>
 void sort(Iterator begin, Iterator end, Compare comp);
+
+#endif

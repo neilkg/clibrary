@@ -1,10 +1,11 @@
-#include <vector.h>
+#ifndef STACK_H
+#define STACK_H
+
+#include "vector.h"
 
 template <typename T>
 class stack {
 public:
-    
-    stack();
     
     bool empty() {
         return elts.size() == 0;
@@ -18,7 +19,7 @@ public:
         return elts[elts.size() - 1];
     }
     
-    void push(T &val) {
+    void push(const T &val) {
         elts.push_back(val);
     }
     
@@ -31,3 +32,5 @@ private:
     vector<T> elts;
     
 };
+
+#endif

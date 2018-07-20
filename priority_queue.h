@@ -1,3 +1,5 @@
+#ifndef PRIOROTY_QUEUE_H
+#define PRIORITY_QUEUE_H
 
 template <typename T>
 class priority_queue {
@@ -17,3 +19,5 @@ public:
 private:
 
 };
+
+#endif

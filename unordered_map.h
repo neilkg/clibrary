@@ -1,3 +1,6 @@
+#ifndef UNORDERED_MAP_H
+#define UNORDERED_MAP_H
+
 #include <functional>
 #include "vector.h"
 
@@ -30,3 +33,5 @@ private:
     vector<vector<T>> elts;
 
 };
+
+#endif

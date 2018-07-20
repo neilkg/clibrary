@@ -1,3 +1,6 @@
+#ifndef LIST_H
+#define LIST_H
+
 
 // singly linked linked list
 // O(n) search, custom removal
@@ -6,7 +9,7 @@ template <typename T>
 class list {
 public:
     
-    list() : begin(nullptr), size(0) {}
+    list() : first(nullptr), list_size(0) {}
     
     ~list() {
         clear();
@@ -15,28 +18,27 @@ public:
     void clear() {
         while (!empty()) {
             pop_front();
-            --size();
         }
     }
     
-    void push_front(T &val) {
+    void push_front(const T &val) {
         Node *temp = new Node;
         temp->val = val;
         temp->next = first;
         first = temp;
-        ++size;
+        ++list_size;
     }
 
     void pop_front() {
         Node *temp = first;
         first = first->next;
         delete temp;
-        --size;
+        --list_size;
     }
     
     // returns true if val is deleted in list
-    bool remove(T &val) {
-        if (first->val = val) {
+    bool remove(const T &val) {
+        if (first->val == val) {
             pop_front();
             return true;
         }
@@ -46,7 +48,7 @@ public:
                 Node *to_delete = temp->next;
                 temp->next = to_delete->next;
                 delete to_delete;
-                --size;
+                --list_size;
                 return true;
             }
             temp = temp->next;
@@ -55,7 +57,7 @@ public:
     }
     
     // returns true if val is found in list
-    bool find(T &val) {
+    bool find(const T &val) {
         Node *temp = first;
         while (temp) {
             if (temp->val == val) {
@@ -72,21 +74,32 @@ public:
     }
 
     int size() {
-        return size;
+        return list_size;
     }
     
     bool empty() {
         return first == nullptr;
     }
     
+    // REQUIRES: Index is withing the bounds of the scope
+    T &operator[](int idx) {
+        Node*temp = first;
+        for (int i = 0; i < idx; ++i) {
+            temp = temp->next;
+        }
+        return temp->val;
+    }
+    
     
 private:
-    Node *first;
-    int size;
-    
     struct Node {
         T val;
         Node *next = nullptr;
-    }
+    };
+    
+    Node *first;
+    int list_size;
     
 };
+
+#endif

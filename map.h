@@ -1,3 +1,6 @@
+#ifndef MAP_H
+#define MAP_H
+
 
 // made using a binary search tree
 // O(log n) search, insertion, and removal
@@ -26,3 +29,5 @@ public:
 private:
     
 };
+
+#endif
