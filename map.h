@@ -1,7 +1,6 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include "AVL.h"
 
 // NEIL GOLLAPUDI
 
@@ -14,13 +13,9 @@ public:
     
     map();
     
-    bool empty() {
-        return elts.empty;
-    }
+    bool empty();
     
-    int size() {
-        return elts.size;
-    }
+    int size();
     
     V &operator[](K key);
     
@@ -32,7 +27,6 @@ public:
     size_t erase(const K& key);
     
 private:
-    AVL<V> elts;
     
 };
 

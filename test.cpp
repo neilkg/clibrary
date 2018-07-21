@@ -2,8 +2,9 @@
 #include "vector.h"
 #include "stack.h"
 #include "list.h"
+#include "queue.h"
 #include "unordered_map.h"
-#include "map.h"
+#include "algorithm.h"
 
 // NEIL GOLLAPDUI
 
@@ -158,6 +159,29 @@ TEST(unorderedmap) {
     ASSERT_FALSE(map.insert(0, 'a'));
     ASSERT_FALSE(map.erase(2));
     ASSERT_TRUE(map.erase(0));
+}
+
+TEST(queue_list) {
+    queue<int> one;
+    ASSERT_TRUE(one.empty());
+    one.push(3);
+    ASSERT_TRUE(one.front() == 3);
+    ASSERT_TRUE(one.size() == 1);
+    one.push(5);
+    one.push(8);
+    one.push(10);
+    ASSERT_TRUE(one.front() == 3);
+    ASSERT_TRUE(one.size() == 4);
+    ASSERT_FALSE(one.empty());
+    one.pop();
+    ASSERT_TRUE(one.front() == 5);
+    one.pop();
+    ASSERT_TRUE(one.front() == 8);
+    one.pop();
+    ASSERT_TRUE(one.front() == 10);
+    one.pop();
+    ASSERT_TRUE(one.size() == 0);
+    ASSERT_TRUE(one.empty());
 }
 
 TEST_MAIN()

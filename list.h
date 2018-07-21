@@ -6,11 +6,12 @@
 // singly linked linked list
 // O(n) search, custom removal
 // O(1) removal, insertion
+// singly linked list cannot pop_back() in O(1)
 template <typename T>
 class list {
 public:
     
-    list() : first(nullptr), list_size(0) {}
+    list() : first(nullptr), last(nullptr), list_size(0) {}
     
     ~list() {
         clear();
@@ -25,8 +26,28 @@ public:
     void push_front(const T &val) {
         Node *temp = new Node;
         temp->val = val;
-        temp->next = first;
-        first = temp;
+        if (first == nullptr) {
+            first = temp;
+            last = temp;
+        }
+        else {
+            temp->next = first;
+            first = temp;
+        }
+        ++list_size;
+    }
+    
+    void push_back(const T &val) {
+        Node *temp = new Node;
+        temp->val = val;
+        if (first == nullptr) {
+            first = temp;
+            last = temp;
+        }
+        else {
+            last->next = temp;
+            last = temp;
+        }
         ++list_size;
     }
 
@@ -73,6 +94,10 @@ public:
     T& front() {
         return first->val;
     }
+    
+    T& back() {
+        return last->val;
+    }
 
     int size() {
         return list_size;
@@ -82,7 +107,7 @@ public:
         return first == nullptr;
     }
     
-    // REQUIRES: Index is withing the bounds of the scope
+    // REQUIRES: Index is within the bounds of the scope
     T &operator[](int idx) {
         Node*temp = first;
         for (int i = 0; i < idx; ++i) {
@@ -99,6 +124,7 @@ private:
     };
     
     Node *first;
+    Node *last;
     int list_size;
     
 };

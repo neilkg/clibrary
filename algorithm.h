@@ -15,13 +15,13 @@ void swap(T& one, T& two) {
 
 // must be a forward iterator
 template <class Iterator, class T, class Compare>
-constexpr Iterator lower_bound(Iterator first, Iterator last, const T& val, Compare comp) {
-    Iterator it;
-    typename std::iterator_traits<Iterator>::difference_type count, step;
-    count = std::distance(first, last);
+Iterator lower_bound(Iterator first, Iterator last, const T& val, Compare comp) {
+    int count;
+    int step;
+    count = int(std::distance(first, last));
     
     while (count > 0) {
-        it = first;
+        Iterator it = first;
         step = count / 2;
         std::advance(it, step);
         if (comp(*it, val)) {
@@ -37,12 +37,13 @@ constexpr Iterator lower_bound(Iterator first, Iterator last, const T& val, Comp
 
 // must be a forward iterator
 template <class Iterator, class T, class Compare>
-constexpr Iterator uppper_bound(Iterator first, Iterator last, const T& val, Compare comp) {
-    Iterator it;
-    typename std::iterator_traits<Iterator>::difference_type count, step;
-    count = std::distance(first,last);
+Iterator uppper_bound(Iterator first, Iterator last, const T& val, Compare comp) {
+    int count;
+    int step;
+    count = int(std::distance(first,last));
+    
     while (count > 0) {
-        it = first;
+        Iterator it = first;
         step=count / 2;
         std::advance(it,step);
         if (!comp(val, *it)) {

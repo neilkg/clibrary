@@ -5,7 +5,6 @@
 #include <utility>
 #include <vector>
 #include "algorithm.h"
-#include "AVL.h"
 
 // NEIL GOLLAPUDI
 
@@ -22,7 +21,7 @@ public:
     unordered_map(long table_size_in) : table_size(table_size_in), num_elements(0) {
         std::vector<std::vector<std::pair<K, V>>> temp;
         temp.resize(table_size);
-        elts = temp;
+        elts = std::move(temp);
     }
     
     bool empty() {

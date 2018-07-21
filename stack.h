@@ -10,28 +10,28 @@ class stack {
 public:
     
     bool empty() {
-        return elts.size() == 0;
+        return data.empty();
     }
     
     int size() {
-        return elts.size();
+        return data.size();
     }
     
     T &top() {
-        return elts[elts.size() - 1];
+        return data.back();
     }
     
     void push(const T &val) {
-        elts.push_back(val);
+        data.push_back(val);
     }
     
     void pop() {
-        elts.pop_back();
+        data.pop_back();
     }
     
     
 private:
-    vector<T> elts;
+    vector<T> data;
     
 };
 
