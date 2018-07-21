@@ -12,6 +12,13 @@ public:
     int size();
     
 private:
+    struct Node {
+        int val;
+        Node *left;
+        Node* right;
+    };
+    
+    Node* top;
     
 };
 

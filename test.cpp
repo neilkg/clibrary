@@ -151,4 +151,13 @@ TEST(list_default) {
     ASSERT_TRUE(one.empty());
 }
 
+TEST(unorderedmap) {
+    unordered_map<int, char> map(100);
+    map[3] = 'c';
+    map[0] = 'a';
+    ASSERT_FALSE(map.insert(0, 'a'));
+    ASSERT_FALSE(map.erase(2));
+    ASSERT_TRUE(map.erase(0));
+}
+
 TEST_MAIN()
