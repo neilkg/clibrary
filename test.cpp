@@ -4,7 +4,10 @@
 #include "list.h"
 #include "queue.h"
 #include "unordered_map.h"
+#include "priority_queue.h"
 #include "algorithm.h"
+#include <cassert>
+#include <vector>
 
 // NEIL GOLLAPDUI
 
@@ -182,6 +185,41 @@ TEST(queue_list) {
     one.pop();
     ASSERT_TRUE(one.size() == 0);
     ASSERT_TRUE(one.empty());
+}
+
+// TODO: find bug in update priorities
+TEST(p_queue) {
+    priority_queue<int*> pq;
+    std::vector<int> data{ 1, 5, 13, 2, 5 };
+    pq.push(&data[0]);
+    pq.push(&data[1]);
+    pq.push(&data[2]);
+    pq.push(&data[3]);
+    pq.push(&data[4]);
+    
+    data[0] = 10;
+    data[3] = 14;
+    data[4] = 11;
+    pq.update_priorities();
+    assert(*pq.top() == 14);
+    pq.pop();
+    assert(*pq.top() == 13);
+    pq.pop();
+    assert(*pq.top() == 11);
+    
+    std::vector<int> data1{1,5,13,2,5};
+    priority_queue<int> other(data1.begin(), data1.end());
+    assert(other.top() == 13);
+    other.pop();
+    assert(other.top() == 5);
+    other.pop();
+    assert(other.top() == 5);
+    other.pop();
+    assert(other.top() == 2);
+    other.pop();
+    assert(other.top() == 1);
+    other.pop();
+    assert(other.empty());
 }
 
 TEST_MAIN()

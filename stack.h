@@ -5,6 +5,8 @@
 
 // NEIL GOLLAPUDI
 
+// made using a vector
+// O(1) insertion and removal
 template <typename T>
 class stack {
 public:
