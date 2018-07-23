@@ -13,7 +13,8 @@ void swap(T& one, T& two) {
     two = std::move(temp);
 }
 
-// must be a forward iterator
+// REQUIRES: container must be sorted
+// 	     must be a forward iterator
 template <class Iterator, class T, class Compare>
 Iterator lower_bound(Iterator first, Iterator last, const T& val, Compare comp) {
     int count;
@@ -35,7 +36,8 @@ Iterator lower_bound(Iterator first, Iterator last, const T& val, Compare comp) 
     return first;
 }
 
-// must be a forward iterator
+// REQUIRES: container must be sorted
+// 	     must be a forward iterator
 template <class Iterator, class T, class Compare>
 Iterator uppper_bound(Iterator first, Iterator last, const T& val, Compare comp) {
     int count;
