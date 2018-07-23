@@ -21,6 +21,8 @@ unordered_map<std::string, int> test3
 
 **Algorithms:**
 ```
+- Lower Bound (binary search)
+- Upper Bound (binary search)
 - Sort (combination of Quicksort and Insertion Sort)
 - Swap (move semantics)
 ```
