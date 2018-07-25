@@ -12,7 +12,7 @@ Neil Gollapudi
 - Map (AVL tree)
 ```
 
-- All data structures are templated and used like stl data structures
+- All data structures are templated and used like C++ Standard Template Library data structures.
 ```
 	vector<int> test1;
 
