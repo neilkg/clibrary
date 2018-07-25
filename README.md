@@ -14,9 +14,11 @@ Neil Gollapudi
 
 - All data structures are templated and used like stl data structures
 ```
-vector<int> test1;
-priority_queue<std::string> test2(FUNCTOR)
-unordered_map<std::string, int> test3
+	vector<int> test1;
+
+	priority_queue<std::string> test2(FUNCTOR)
+
+	unordered_map<std::string, int> test3
 ```
 
 **Algorithms:**
